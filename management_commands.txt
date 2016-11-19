@@ -1,0 +1,5 @@
+# Migrate polls app after updating models
+python manage.py makemigrations polls
+
+# Show SQL migration procedure
+python manage.py sqlmigrate polls 0001
