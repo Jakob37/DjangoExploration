@@ -54,3 +54,11 @@ Run `python manage.py shell`. Then, we are ready to add stuff manually to our da
 >>> Question.objects.all()  # List all objects in Question database (?)
 >>> q.question_text  # Access fields
 ```
+
+### Testing
+
+We can make site specific tests in `test.py` in each site folder. We can then run tests by:
+
+```
+python manage.py test polls
+```

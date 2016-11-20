@@ -4,6 +4,7 @@ from django.http import Http404
 from django.template import loader
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.utils import timezone
 
 # For latest version
 # from django.urls import reverse
@@ -56,5 +57,12 @@ def vote(request, question_id):
 
 #    return HttpResponse("You're voting on question {}.".format(question_id))
 
+def get_queryset(self):
+
+    """
+    Return the last five published questions (not including future quesitons)
+    """
+
+    return Quesion.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
 
 
