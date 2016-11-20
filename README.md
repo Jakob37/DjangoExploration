@@ -46,6 +46,8 @@ python manage.py migrate
 Run `python manage.py shell`. Then, we are ready to add stuff manually to our databases.
 
 ```
+>>> from polls.models import Question, Choice
+>>> from django.utils import timezone
 >>> q = Question(question_text="What's new?", pub_date=timezone.now())
 >>> q.save()  # Save object to databse
 >>> q.id  # Get object ID
