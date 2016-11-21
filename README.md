@@ -62,3 +62,9 @@ We can make site specific tests in `test.py` in each site folder. We can then ru
 ```
 python manage.py test polls
 ```
+
+### Find Django source path
+
+```
+python -c "import django; print(django.__path__)"
+```
